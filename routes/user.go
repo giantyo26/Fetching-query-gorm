@@ -13,5 +13,9 @@ func UserRoutes(e *echo.Group) {
 	h := handlers.HandlerUser(userRepository)
 
 	e.GET("/users", h.FindUsers)
-	e.GET("/users/:id", h.GetUser)
+	e.GET("/user/:id", h.GetUser)
+	e.POST("/user", h.CreateUser)
+	e.PATCH("/user/:id", h.UpdateUser)
+	e.DELETE("/user/:id", h.DeleteUser)
+
 }
